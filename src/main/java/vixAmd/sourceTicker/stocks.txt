@@ -1,0 +1,5 @@
+refreshInterval=5
+#stockCode BuyDate BuyPrice buyQuantity brokerage% serviceTaxRate% trunOverFee% ssecurityTransactionTaxRate% isDerivative
+ABB 19/02/1982 130 15 .5 10.2 .005 .1 derivative
+ITI 2/11/83 140 16 .5 10.2 .005 .1 equity
+

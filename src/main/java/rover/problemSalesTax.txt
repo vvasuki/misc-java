@@ -1,0 +1,181 @@
+PROBLEM TWO: SALES TAXES
+
+"
+Basic sales tax is applicable at a rate of 10% on all goods, except books,
+food, and medical products that are exempt. Import duty is an additional
+sales tax applicable on all imported goods at a rate of 5%, with no
+exemptions."
+
+---------
+commentary:
+sales tax and import tax are calculated on the basic price.
+
+---------
+"When I purchase items I receive a receipt which lists the name of all the
+items and their price (including tax), finishing with the total cost of the
+items, and the total amounts of sales taxes paid.  The rounding rules for
+sales tax are that for a tax rate of n%, a shelf price of p contains
+(np/100 rounded up to the nearest 0.05) amount of sales tax.
+"
+--------
+commentary:
+
+notations are introduced:
+n is the sales tax rate.
+p is the shelf price.
+
+sales tax is rounded to the nearest 0.05.
+note that it is rounded up, never rounded down.
+this is applicable for both basic tax and import tax
+
+---------
+Write an application that prints out the receipt details for these shopping
+baskets...
+
+---------
+
+commentary:
+
+ok. all clear.
+so, shopping baskets must be accepted.
+
+--------------
+
+INPUT:
+
+Input 1:
+1 book at 12.49
+1 music CD at 14.99
+1 chocolate bar at 0.85
+
+--------------
+commentary:
+each line above contains 
+quantity, import status, item label, cost price, 
+info about whether it is a food, book or medical product.
+
+---------
+
+Input 2:
+1 imported box of chocolates at 10.00
+1 imported bottle of perfume at 47.50
+
+Input 3:
+1 imported bottle of perfume at 27.99
+1 bottle of perfume at 18.99
+1 packet of headache pills at 9.75
+1 box of imported chocolates at 11.25
+
+
+OUTPUT
+
+Output 1:
+1 book : 12.49
+1 music CD: 16.49
+1 chocolate bar: 0.85
+Sales Taxes: 1.50
+Total: 29.83
+
+-----------
+commentary:
+above, tax is calculated solely for the music CD 
+and is added automatically 
+to get that item's shelf price.
+
+so, the total is just a sum of shelf prices.
+the sales taxes item is printed seperately.
+it is a sum of all sales taxes implicitly paid.
+it is not part of the total.
+
+---------
+
+Output 2:
+1 imported box of chocolates: 10.50
+1 imported bottle of perfume: 54.65
+Sales Taxes: 7.65
+Total: 65.15
+
+----------
+commentary:
+note that for the imported box of chocolates, 
+basic sales tax is not added.
+import duty, however is.
+
+for the perfume, base price is 4750.
+then, 475 basic sales tax is added.
+then 240 rounded import tax is also added.
+
+---------
+
+Output 3:
+1 imported bottle of perfume: 32.19
+1 bottle of perfume: 20.89
+1 packet of headache pills: 9.75
+1 imported box of chocolates: 11.85
+Sales Taxes: 6.70
+Total: 74.68
+
+---------
+
+Initial ideas:
+
+make clerk class.
+an object of this class 
+has a service method.
+it accepts shopping basket objects.
+an clerk object is created because, 
+in the future, different clerk objects can 
+have different behaviours and greetings.
+for each shopping basket the clerk processes, 
+the processShoppingBasket method is called.
+Here, the clerk instantiates shoppingBaskets, 
+the billItems in the shopping basket; 
+as read from the string argument passed to it.
+This method returns the output for that shopping basket.
+
+make shopping-basket class.
+a shopping basket 
+is a collection of BillItem objects.
+a seperate shopping-basket class 
+is created 
+instead of just using a collection 
+because there may be future extentions.
+The ShoppingBasket class contains 
+a method to produce the final bill.
+
+make Item class.
+make ImportedItem subclass.
+this subclass is created because, 
+eventually, ImortedItem objects 
+can hold extra data pertinent to the "imported" status.
+
+make BasicSalesTaxExemtptedList interface.
+make static lists of strings 
+for which sales tax is exempted.
+let there be a food-word list, 
+medicine-word list and book-word list.
+
+item object has a boolean flag 
+to indicate whether basic sales tax 
+is exempted.
+it has a method to determine the above, 
+using the BasicSalesTaxExemtptedList.
+it also has the basic price variable, 
+which is a long integer.
+(all prices are stored in cents.)
+it has the sales tax variable, initialised to 0.
+it has an identifying label.
+
+an item has methods 
+to get and set its basic tax exemption status.
+it has a method to calculate sales tax.
+this method is overridden in the ImportedItem subclass.
+it has a method to get the sales tax.
+it has a method to get and set basic price.
+it has a method to get shelf price.
+
+make BillItem class.
+this includes one Item object 
+and an integer representing the quantity billed.
+
+

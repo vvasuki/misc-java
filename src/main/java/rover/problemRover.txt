@@ -1,0 +1,248 @@
+PROBLEM ONE: MARS ROVERS
+
+---------
+"A squad of robotic rovers are to be landed by NASA on a plateau on Mars.
+This plateau, which is curiously rectangular, must be navigated by the
+rovers so that their on-board cameras can get a complete view of the
+surrounding terrain to send back to Earth."
+---------
+commentary:
+there are a *squad* of rovers.
+
+each rover is landed *on* the rectangular plateau.
+
+"surrounding terrain" means the terrain surrounding the rovers.
+i assume it to include all terrain it can possible capture in video.
+this includes terrain on the plateau and terrain off the plateau.
+
+----------
+
+"A rover's position and location is represented by a combination of x and y
+co-ordinates and a letter representing one of the four cardinal compass
+points. The plateau is divided up into a grid to simplify navigation. An
+example position might be 0, 0, N, which means the rover is in the bottom
+left corner and facing North."
+----------
+
+commentary:
+
+thus, the position and heading are defined.
+
+----------
+"In order to control a rover, NASA sends a simple string of letters. The
+possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90
+degrees left or right respectively, without moving from its current spot.
+'M' means move forward one grid point, and maintain the same heading."
+
+-----------
+commentary:
+thus are the commands defined.
+
+the basic descrete unit of movement is 1 grid point.
+no smaller movement is possible.
+i shall assume that the ground area occupied by the rover is an infinitesimal.
+so, if the rover is located in 0,0,N 
+and the size of the left edge is sizM grid points, 
+floor(sizM) <M> comands will not cause the rover to fall over the edge.
+
+the rover responds to houston's commands for turning and movement, 
+all the time beaming back video.
+maybe, if houston tells it to move forward from a cliff, 
+it does so.
+maybe it does not.
+it is houston's responsibility to keep it safe.
+
+-----------
+
+"Assume that the square directly North from (x, y) is (x, y+1)."
+
+-----------
+commentary:
+so, a grid square shall be identified by the coordinates of 
+its bottom left corner.
+
+-----------
+
+INPUT:
+The first line of input is the upper-right coordinates of the plateau, the
+lower-left coordinates are assumed to be 0,0.
+
+------------
+commentary:
+ok. now begins the description of the input to the rovers.
+
+the first line is 
+xMax yMax
+
+since this is to be a general solution, 
+i shall assume that the above are 
+random positive rational numbers.
+
+all distance is measured in rotor movement units or rmu.
+1 rmu is the distance travelled by the rover in response to 
+one <M>.
+
+------------
+
+"The rest of the input is information pertaining to the rovers that have
+been deployed. Each rover has two lines of input. The first line gives the
+rover's position, and the second line is a series of instructions telling
+the rover how to explore the plateau."
+
+"The position is made up of two integers and a letter separated by spaces,
+corresponding to the x and y co-ordinates and the rover's orientation.
+"
+
+----------
+
+commentary:
+
+the next lines are:
+xRov1 yRov1 facing
+instructions for expoloration.
+
+xRov1 and yRov1 will be random positive rational numbers 
+lesser than xMax and yMax respectively.
+
+----------
+
+"Each rover will be finished sequentially, which means that the second rover
+won't start to move until the first one has finished moving.
+"
+
+-----------
+
+----------
+
+OUTPUT
+The output for each rover should be its final co-ordinates and heading.
+
+----------
+commentary:
+
+xFinal1 yFinal1
+is the output.
+
+---------
+
+INPUT AND OUTPUT
+
+Test Input:
+5 5
+1 2 N
+LMLMLMLMM
+3 3 E
+MMRMMRMRRM
+
+Expected Output:
+1 3 N
+5 1 E
+
+---------
+commentary:
+
+2 seperate rovers have been communicated with, 
+sequentially.
+
+...........
+| | | | | |
+...........
+| | | | | |
+...........
+| | | | | |
+..^........
+| | | | | |
+...........
+| | | | | |
+
+----------
+
+preliminary ideas:
+the problem is about calculating the 
+output based on the input; 
+not about coming up with an 
+exploration algorithm.
+
+ours is a end-position and heading computing program..
+to tell houston what will happen 
+if the plateau is thus, 
+the rovers are situated thus and thus, 
+and the movement instructions given are thus.
+in the above conditions,
+where will the rover be positioned in the end, 
+what will their headings be?
+this the simulation program says.
+
+make the simulation class.
+may it contain the simulate method.
+this method will instantiate 
+the plateau object, the controller object, 
+various rover objects. 
+this has got a list of rover objects.
+to check for collisions, 
+the rovers are instantiated at one shot, 
+before the movement instructions are processed.
+if nasa has placed one rover over another, 
+an exception is thrown and both rovers are invalidated.
+similar is the case where the rover is landed off the plateau.
+using the instructRover method in the controller object,
+it moves each rover to a final position.
+these positions are finally output.
+
+the simulation class also has a isThereCollision method.
+this method accepts a position and 
+checks it against its list of current rover positions 
+to detect collision.
+there is also a similar method, offThePlateau method.
+these throw and handle appropreate exceptions.
+
+make controller class and 
+instantiate an object. 
+this object has a method instructRover.
+this method's business is to 
+serially transmit instructions to 
+the target rover.
+that is, it splits the movement-instruction-line 
+into movement tokens, and computes the resultant position.
+
+make rectangular plateu class.
+let it contain dimention attributes.
+
+the reason the above classes and objects are made 
+is because there may concievably be 
+multiple plateaus and controllers.
+thus, future extensiblity is taken care of.
+
+make rover class.
+it contains an initialPosition and heading attribute.
+the above are encapsulated in RoverPosition class.
+let it contain position and heading attributes.
+these attributes are stored as double.
+it is assumed that the double format suffices 
+to store these values.
+it also contains an "operational" flag.
+let it contain a move method, 
+which responds to a single comand letter, 
+and recalculates position and heading.
+if simulation.showStepByStep is enabled, 
+logs are printed after each movement.
+after each move, the simulation.isThereCollision method 
+and the simulation.offThePlateau method are called.
+Let the move method throw and handle invalidInstruction 
+and throw roverInvalidated exceptions. 
+this method has no effect if the rover is not operational.
+
+this position/ heading calculating mechanism 
+belongs in the rover class, because 
+they are most directly related to the rover.
+
+exceptions thrown include 
+invalidInstruction, fallOffThePlateau and collision.
+
+write junit test cases for all methods.
+all these tests are simulation objects.
+put in proper java documentation.
+optionally, 
+make visual simulation along with text.
+make a note on coding standards and naming conventions used.
+

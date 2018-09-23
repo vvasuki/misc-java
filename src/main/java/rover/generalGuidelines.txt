@@ -1,0 +1,55 @@
+De: Maria Anita <MAnita@thoughtworks.com>	Envoyé par: thoughtworks.com
+À: vishvas@gmail.com
+Date: 16 déc. 2005 18:00
+Objet: ThoughtWorks Code Review - INDIA
+
+In addition to the code review you
+are about to begin, we also administer logic and general aptitude
+assessments when you visit our office.
+
+Because we may use your code as an interview tool,
+ThoughtWorks reserves the right to postpone your technical interview if
+your code is not received. 
+
+To expedite proper routing of your code, please type the COUNTRY of
+the ThoughtWorks office you are applying to (AUSTRALIA, UK, INDIA, USA or
+CANADA) in the Subject Line of your email.
+
+Enclosed are two programming problems.  We ask that you read both
+descriptions thoroughly then create a program to solve **ONE** of the
+problems.  If you choose to do both problems, we will choose and evaluate
+only one of your solutions.
+
+We are interested in the design aspect of the
+solution and would like to evaluate your object oriented programming
+skills.
+
+As a general rule, we allow three days from the date that you receive this
+letter to submit your code to CODE@THOUGHTWORKS.COM, but you may request
+more time if needed. 
+
+All problems below require some kind of input. 
+You are free to implement 
+any mechanism for feeding input into your solution (for example, using hard
+coded data within a unit test).  
+You should provide sufficient evidence
+that your solution is complete by, as a minimum, indicating that it works
+correctly against the supplied test data.
+
+For the solution, we would want you use either Java or C#.  
+You may not use any enhanced functionality of the language or 
+any external libraries to solve this problem; 
+however, you may use external libraries or tools for
+building or testing purposes.  Specifically, you may use JUnit and/or Ant
+to assist your development.
+
+You may also include a brief explanation of your design and assumptions
+along with your code.
+
+
+---------------
+
+vidya says:
+make solutions with good time and space complexity.
+take rajesh's review.
+

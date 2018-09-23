@@ -1,0 +1,90 @@
+/*
+ * Note from Vishvas Vasuki to thoughtWorks.
+ * This is a part of 3 file solution to the rovers on martian plateau problem.
+ * The files are:
+ * RoversOnPlateauSimulation.java
+ * RoversOnPlateauSimulationTest.java
+ * roverSimDesignComments.txt
+ */
+
+ --------------
+ In the mail that i recieved from thoughtWorks, there was a suggestion 
+ that a brief explanation of the design is accptable.
+ A breif explanation follows.
+
+ -----------
+ Ours is a end-position and heading computing program.. to tell houston what
+ will happen if the plateau is thus, the rovers are situated thus and thus,
+ and the movement instructions given are thus. in the above conditions, where
+ will the rover be positioned in the end? what will their headings be? this
+ the simulation program says.
+ 
+ -------------------
+ A listing of the various classes of objects used in the design follows.
+ 
+ 1. RoversOnPlateauSimulation 
+ * An object of RoversOnPlateauSimulation class represents a scenario simulated.
+ This contains the following methods of note:
+ RoversOnPlateauSimulation(String)
+ simulate()
+ isThereCollision(Rover)
+ isOffThePlateau(Rover)
+
+ 
+ 2. Plateau
+ 
+ Object of this class represents a rectangular plateu. The reason this class
+ and object is made is because there may concievably be multiple plateaus and
+ controllers (one at houston, one at bangalore). 
+ thus, future extensiblity is taken care of.
+ This contains the following methods:
+ Plateau(String)
+ Plateau(double, double)
+ isOffThePlateau(Rover)
+ toString()
+ 
+ 3. Controller
+ The controller object represents an entity which sends movement
+ instructions to a certain rover in a certain plateau.
+ This contains the following methods:
+ instructRover(RoversOnPlateauSimulation, Rover, String)
+ 
+ 4. RoverPosition
+ Object of this class encapsulates a rover's position and heading. 
+ This contains the following methods:
+ RoverPosition(double, double, char)
+ RoverPosition(String)
+ clone()
+ toString()
+ and various get and set methods
+ 
+ 5. Rover
+ Objects of this class represent rovers.
+ This contains the following methods:
+ Rover(String)
+ move(RoversOnPlateauSimulation, char)
+ getCurPosition()
+ getInitPosition()
+ setOperationalStatus(boolean)
+ ----------------
+  
+ To handle odd eventualities the following Exception classes are also used:
+ OffPlateauException
+ RoverCollisionException
+ RoverInoperationalException
+ InvalidInputException
+ InvalidInstructionException
+ 
+ The eventualities represented by the above is apparent from their names.
+ ------------------
+ 
+ To conveniently test this object oriented program 
+ and the various methods contained in the many objects, 
+ JUnit test cases have been written.
+ 
+ ------------------
+ 
+ Javadoc documentation has been liberally added to improve readability 
+ whereever appropreate.
+ 
+ -------------------
