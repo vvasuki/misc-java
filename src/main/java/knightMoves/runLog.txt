@@ -1,0 +1,103 @@
+25-Sep-07 9:55:26 AM knightMoves.ChessBoard main
+INFO: 5 6 4 3 5 1 4 2 6 5 
+
+25-Sep-07 9:55:26 AM knightMoves.ChessBoard main
+INFO: 710 4814 78 17 728 1 74 9 5002 654 
+
+25-Sep-07 9:55:26 AM knightMoves.ChessBoard main
+INFO: 3487 207196 34 4 3192 0 72 1 278655 3018 
+
+25-Sep-07 9:57:38 AM knightMoves.ChessBoard main
+INFO: SolCost:2 3 2 3 3 3 3 3 3 2 
+
+25-Sep-07 9:57:38 AM knightMoves.ChessBoard main
+INFO: SqrExp:2 14 2 58 13 13 12 12 16 2 
+
+25-Sep-07 9:57:38 AM knightMoves.ChessBoard main
+INFO: Runtime:2 3 0 42 3 2 2 3 4 1 
+
+
+x=[2 3 2 3 3 3 3 3 3 2 5 6 4 3 5 1 4 2 6 5 ]
+y=[2 14 2 58 13 13 12 12 16 2 710 4814 78 17 728 1 74 9 5002 654 ]
+z=[2 3 0 42 3 2 2 3 4 1 3487 207196 34 4 3192 0 72 1 278655 3018 ]
+
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 6 and 0
+25-Sep-07 9:29:12 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:4
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:35
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:79
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 5 and 7
+25-Sep-07 9:29:12 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:4
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:63
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:74
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 6 and 2
+25-Sep-07 9:29:12 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:4
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:35
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:78
+25-Sep-07 9:29:12 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 4 and 7
+25-Sep-07 9:29:15 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:5
+25-Sep-07 9:29:15 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:3132
+25-Sep-07 9:29:15 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:656
+25-Sep-07 9:29:15 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 1 and 7
+25-Sep-07 9:29:16 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:4
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:61
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:74
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 1 and 1
+25-Sep-07 9:29:16 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:2
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:1
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:2
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 1 and 0
+25-Sep-07 9:29:16 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:3
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:3
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:14
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 2 and 4
+25-Sep-07 9:29:16 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:2
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:2
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:9
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 4 and 6
+25-Sep-07 9:29:16 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:4
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:40
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:77
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard generateProblem
+INFO: iX and iY are 3 and 4
+25-Sep-07 9:29:16 AM knightMoves.ProblemSolvedException printSolution
+INFO: solution cost:3
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Runtime:49
+25-Sep-07 9:29:16 AM knightMoves.ChessBoard getMetrics
+INFO: Nodes expanded:58
